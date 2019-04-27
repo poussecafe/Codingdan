@@ -1,0 +1,18 @@
+package org.zerock.mapper;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Select;
+import org.zerock.domain.BoardVO;
+
+public interface BoardMapper {
+	
+	// xml 파일에 sql문 처리 했으니까 주석 처리
+	// @Select("select * from tbl_board where bno > 0")
+	public List<BoardVO> getList();
+	
+	public void insert(BoardVO board);
+	
+	public void insertSelcetKey(BoardVO board);
+
+}
