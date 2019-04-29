@@ -10,6 +10,7 @@ public interface BoardService {
 	
 	public BoardVO get(Long bno);
 	
+	// 수정 여부를 boolean으로 처리
 	public boolean modify(BoardVO board);
 	
 	public boolean remove(Long bno);
