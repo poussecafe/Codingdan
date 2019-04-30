@@ -39,40 +39,13 @@
 				</div>
 				<button data-oper='modify' class="btn btn-default"></button>
 				<button data-oper='list' class="btn btn-info"></button>
-
-				<!-- form 태그에 게시물 번호(bno)를 담아서 넘긴다 -->
+				
 				<form id='operForm' action="/board/modify" method="get">
-					<input type='hidden' id='bno' name='bno'
-						value='<c:out value="${board.bno }"/>'>
+					<input type='hidden' id='bno' name='bno' value='<c:out value="${board.bno }"/>'>
 				</form>
 			</div>
 		</div>
 	</div>
 </div>
-
-<script type="text/javascript">
-	$(document).ready(function() {
-
-		var operForm = $
-		{
-			"#operFrom"
-		}
-		;
-
-		$("button[data-oper='modify']").on("click", function(e) {
-
-			operForm.attr("action", "/board/modify").submit();
-		});
-
-		$("button[data-oper='list']").on("click", function(e) {
-
-			// form 태그 내의 bno를 지운다
-			operForm.find("#bno").remove();
-			operForm.attr("action", "/board/list");
-			operForm.submit();
-		});
-
-	});
-</script>
 
 <%@include file="../includes/footer.jsp"%>

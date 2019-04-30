@@ -84,9 +84,8 @@
 
 			} else if (operation === 'list') {
 				// 목록으로 이동
-				formObj.attr("action", "/board/list").attr("method", "get");
-				// list로 이동할 때는 아무런 파라미터가 없기 때문에 form 태그의 모든 내용은 삭제한 상태에서 submit
-				formObj.empty();
+				self.location = "/board/list";
+				return;
 			}
 
 			formObj.submit();
