@@ -4,7 +4,6 @@ INDEX VERSION 1.131+C:\Users\min\Desktop\min\Codingdan\.metadata\.plugins\org.ec
 3458039860.index
 1136329970.index
 3812875719.index
-4160053258.index
 3964918290.index
 2327184759.index
 2083716682.index
@@ -18,7 +17,6 @@ INDEX VERSION 1.131+C:\Users\min\Desktop\min\Codingdan\.metadata\.plugins\org.ec
 3008991740.index
 72535324.index
 1779774438.index
-1309588450.index
 1607282252.index
 2161747041.index
 4215805900.index
@@ -49,19 +47,16 @@ INDEX VERSION 1.131+C:\Users\min\Desktop\min\Codingdan\.metadata\.plugins\org.ec
 2708369448.index
 2971005620.index
 1110334383.index
+2014940210.index
 1394848873.index
 2994552673.index
 1485266793.index
-2014940210.index
 3058548047.index
 420259236.index
-901880277.index
 3436548351.index
-2352628285.index
 3062447685.index
 1180489742.index
 3397372799.index
 1453424183.index
 1838784313.index
 1540120223.index
-2638686276.index

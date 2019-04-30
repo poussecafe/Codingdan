@@ -2,12 +2,16 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="log4j" key="selection"/>
+		<item value="static-top" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="static-top"/>
+			<item value="page-wrapper"/>
+			<item value="admin"/>
+			<item value="../"/>
 			<item value="log4j"/>
 			<item value="log"/>
 			<item value="hikari"/>
@@ -15,6 +19,7 @@
 			<item value="junit"/>
 		</list>
 		<list key="replacehistory">
+			<item value="/resources/"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

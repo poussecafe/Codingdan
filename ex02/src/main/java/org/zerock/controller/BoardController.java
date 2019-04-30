@@ -12,7 +12,6 @@ import org.zerock.service.BoardService;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
-import oracle.jdbc.proxy.annotation.Post;
 
 // 스프링의 빈으로 인식할 수 있도록 해줌
 @Controller
@@ -32,6 +31,12 @@ public class BoardController {
 		model.addAttribute("list", service.getList());
 	}
 	
+	// 등록 처리 페이지(입력 페이지를 보여주는 역할만 하기 때문에 별도의 처리가 필요하지 않다)
+	@GetMapping("/register")
+	public void register() {
+		
+	}
+	
 	// 등록 처리
 	@PostMapping("/register")
 	// RedirectAttributes를 파라미터로 지정: 등록 작업이 끝난 후 다시 목록 화면으로 이동하기 위함, 추가적으로 등록된 게시물의 번호를 같이 전달하기 위해서 이용
@@ -46,11 +51,12 @@ public class BoardController {
 		return "redirect:/board/list";
 	}
 	
-	// 조회 처리
-	@GetMapping("/get")
+	// 조회 처리, 수정과 삭제를 위한 화면으로 이동
+	// @GetMapping이나 @PostMapping은 URL을 배열로 처리할 수 있다
+	@GetMapping({"/get", "/modify"})
 	public void get(@RequestParam("bno") Long bno, Model model) {
 		
-		log.info("/get");
+		log.info("/get or modify");
 		model.addAttribute("board", service.get(bno));
 	}
 	

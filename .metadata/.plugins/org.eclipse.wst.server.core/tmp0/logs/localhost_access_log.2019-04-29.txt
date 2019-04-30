@@ -125,3 +125,15 @@
 0:0:0:0:0:0:0:1 - - [29/Apr/2019:23:17:50 +0900] "GET /resources/js/demo/datatables-demo.js HTTP/1.1" 304 -
 0:0:0:0:0:0:0:1 - - [29/Apr/2019:23:17:50 +0900] "GET /resources/vendor/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 304 -
 0:0:0:0:0:0:0:1 - - [29/Apr/2019:23:17:50 +0900] "GET /resources/vendor/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [29/Apr/2019:23:56:06 +0900] "GET /board/list HTTP/1.1" 200 38000
+0:0:0:0:0:0:0:1 - - [29/Apr/2019:23:56:06 +0900] "GET /resources/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [29/Apr/2019:23:56:06 +0900] "GET /resources/css/sb-admin-2.min.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [29/Apr/2019:23:56:06 +0900] "GET /resources/vendor/datatables/dataTables.bootstrap4.min.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [29/Apr/2019:23:56:06 +0900] "GET /resources/js/sb-admin-2.min.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [29/Apr/2019:23:56:06 +0900] "GET /resources/vendor/jquery-easing/jquery.easing.min.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [29/Apr/2019:23:56:06 +0900] "GET /resources/vendor/datatables/dataTables.bootstrap4.min.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [29/Apr/2019:23:56:06 +0900] "GET /resources/js/demo/datatables-demo.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [29/Apr/2019:23:56:06 +0900] "GET /resources/vendor/datatables/jquery.dataTables.min.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [29/Apr/2019:23:56:06 +0900] "GET /resources/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [29/Apr/2019:23:56:06 +0900] "GET /resources/vendor/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [29/Apr/2019:23:56:06 +0900] "GET /resources/vendor/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 304 -

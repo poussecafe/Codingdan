@@ -5,7 +5,64 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-04-26T01:05:00Z</updated>
+  <updated>2019-04-29T16:40:00Z</updated>
+  <entry>
+    <title>Spring Cloud Open Service Broker 3.0.0 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/04/29/spring-cloud-open-service-broker-3-0-0-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Roy Clarkson</name>
+    </author>
+    <id>tag:spring.io,2019-04-29:3660</id>
+    <updated>2019-04-29T16:40:00Z</updated>
+    <content type="html">&lt;p&gt;We are pleased to announce the general availability of Spring Cloud Open Service Broker 3.0.0. This release introduces a significant shift from imperative to reactive APIs in order to support the new reactive-based web framework, Spring WebFlux. v3.0.0 was developed in parallel with v2.1.x and has feature parity with &lt;a href="https://spring.io/blog/2019/04/29/spring-cloud-open-service-broker-2-1-2-released"&gt;v2.1.2&lt;/a&gt;. Looking forward, all new features will only be added to the 3.x releases.&lt;/p&gt;
+&lt;p&gt;New features available in v3.0.0:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Continue support for &lt;a href="https://www.openservicebrokerapi.org/blog/2018/08/21/open-service-broker-v2-14-released"&gt;Open Service Broker API v2.14&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Support Spring Boot 2.1 and Spring Framework 5.1&lt;/li&gt;
+  &lt;li&gt;Introduce support for Spring WebFlux via a new Reactive API (based on Project Reactor)&lt;/li&gt;
+  &lt;li&gt;Continue support for Spring MVC&lt;/li&gt;
+  &lt;li&gt;Rename the Spring Boot starter because it now supports both Spring web frameworks&lt;/li&gt;
+  &lt;li&gt;Introduce several reactive life cycle hooks for performing additional operations&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Include the following Spring Boot starter:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;&amp;lt;dependency&amp;gt;&#xD;
+  &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
+  &amp;lt;artifactId&amp;gt;spring-cloud-starter-open-service-broker&amp;lt;/artifactId&amp;gt;&#xD;
+  &amp;lt;version&amp;gt;3.0.0.RELEASE&amp;lt;/version&amp;gt;&#xD;
+&amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href="https://spring.io/projects/spring-cloud-open-service-broker"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-cloud/spring-cloud-open-service-broker"&gt;GitHub&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-cloud-open-service-broker/docs/3.0.0.RELEASE/reference/html5"&gt;Reference Doc&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-cloud-open-service-broker/docs/3.0.0.RELEASE/apidocs/"&gt;API Doc&lt;/a&gt; &lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Cloud Open Service Broker 2.1.2 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/04/29/spring-cloud-open-service-broker-2-1-2-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Roy Clarkson</name>
+    </author>
+    <id>tag:spring.io,2019-04-29:3659</id>
+    <updated>2019-04-29T16:35:00Z</updated>
+    <content type="html">&lt;p&gt;We are pleased to announce the release of Spring Cloud Open Service Broker 2.1.2. We want to thank Guillaume Berche for his significant contributions to this release and to the project overall. This is a maintenance release that incorporates several updates and improvements, including the following:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Continued support for &lt;a href="https://www.openservicebrokerapi.org/blog/2018/08/21/open-service-broker-v2-14-released"&gt;Open Service Broker API v2.14&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Upgrade to Spring Boot 2.0.9.RELEASE and Spring Framework 5.0.13.RELEASE&lt;/li&gt;
+  &lt;li&gt;Fix compatibility issue with Spring Boot DevTools&lt;/li&gt;
+  &lt;li&gt;Allow nulls in optional Boolean fields and no longer set default values&lt;/li&gt;
+  &lt;li&gt;Use valid JSON schema examples&lt;/li&gt;
+  &lt;li&gt;Fix JSON serialization of model objects for use by OSB clients&lt;/li&gt;
+  &lt;li&gt;Fix JSON schema not properly mapping to arrays&lt;/li&gt;
+  &lt;li&gt;Add property binding support for CloudFoundry service plan metadata&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Include the following Spring Boot starter:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;&amp;lt;dependency&amp;gt;&#xD;
+  &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
+  &amp;lt;artifactId&amp;gt;spring-cloud-starter-open-service-broker-webmc&amp;lt;/artifactId&amp;gt;&#xD;
+  &amp;lt;version&amp;gt;2.1.2.RELEASE&amp;lt;/version&amp;gt;&#xD;
+&amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href="https://spring.io/projects/spring-cloud-open-service-broker"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-cloud/spring-cloud-open-service-broker"&gt;GitHub&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-cloud-open-service-broker/docs/2.1.2.RELEASE/reference/html5"&gt;Reference Doc&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-cloud-open-service-broker/docs/2.1.2.RELEASE/apidocs/"&gt;API Doc&lt;/a&gt; &lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>A Bootiful Podcast: Spring Batch and Spring Cloud Task lead Michael Minella</title>
     <link rel="alternate" href="https://spring.io/blog/2019/04/26/a-bootiful-podcast-spring-batch-and-spring-cloud-task-lead-michael-minella" />
@@ -1030,542 +1087,6 @@ public String hello(@CurrentSecurityContext
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
 &lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-session-data-geode/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-session-data-geode/pulls"&gt;PR&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-session"&gt;StackOverflow&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Session for Apache Geode &amp; Pivotal GemFire 2.0.9.RELEASE &amp; 2.1.3.RELEASE Available</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/04/12/spring-session-for-apache-geode-pivotal-gemfire-2-0-9-release-2-1-3-release-available" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>John Blum</name>
-    </author>
-    <id>tag:spring.io,2019-04-12:3640</id>
-    <updated>2019-04-12T16:40:39Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;I am pleased to announce the release of Spring Session for Apache Geode &amp;amp; Pivotal GemFire (SSDG), 2.0.9.RELEASE and 2.1.3.RELEASE.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Both of these releases focus on dependency updates to align with the rest of the Spring portfolio in their respective release lines.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;SSDG 2.0.9.RELEASE builds on:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Spring Framework 5.0.13.RELEASE&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Spring Data Kay-SR14&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Spring Session 2.0.10.RELEASE (Apple-SR9)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;And is targeted for use in Spring Boot 2.0.9.RELEASE.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;SSDG 2.1.3.RELEASE builds on:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Spring Framework 5.1.6.RELESE&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Spring Data Lovelace-SR6&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Spring Session 2.1.5.RELEASE (Bean-SR4)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;And is targeted for use in Spring Boot 2.1.4.RELEASE&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;All SSDG bits are available in Maven Central (&lt;a href="https://search.maven.org/search?q=g:org.springframework.session%20AND%20a:spring-session-data-geode&amp;amp;core=gav"&gt;here&lt;/a&gt;).&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="what-s-next"&gt;&lt;a class="anchor" href="#what-s-next"&gt;&lt;/a&gt;What&amp;#8217;s Next&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;All attention is now focused on the SSDG 2.2 release line, building on Spring Framework 5.2, Spring Data Moore, Spring Session 2.2 and targeted for use in Spring Boot 2.2.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Some of the proposed and upcoming features include:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Attached Sessions (option).&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Stronger Consistency (option) using &lt;code&gt;Map.replace(key, oldValue, newValue)&lt;/code&gt; for lightweight transactions supplanting the need for heavier, cache/local transactions.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Improvements in PDX Serialization support.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;And much more&amp;#8230;&amp;#8203;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="feedback"&gt;&lt;a class="anchor" href="#feedback"&gt;&lt;/a&gt;Feedback&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;As always, any feedback is much appreciated.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-session-data-geode/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-session-data-geode/pulls"&gt;PR&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-session"&gt;StackOverflow&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</content>
-  </entry>
-  <entry>
-    <title>Going Reactive with Spring, Coroutines and Kotlin Flow</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/04/12/going-reactive-with-spring-coroutines-and-kotlin-flow" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>S?bastien Deleuze</name>
-    </author>
-    <id>tag:spring.io,2019-04-12:3639</id>
-    <updated>2019-04-12T08:12:00Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;Since we announced &lt;a href="https://spring.io/blog/2017/01/04/introducing-kotlin-support-in-spring-framework-5-0"&gt;Spring Framework official support for Kotlin&lt;/a&gt; in January 2017, a lot of things happened. Kotlin was announced as an official Android development language at Google I/O 2017, we continued to improve the Kotlin support across Spring portfolio and Kotlin itself has continued to evolve with key new features like &lt;a href="https://kotlinlang.org/docs/reference/coroutines-overview.html"&gt;coroutines&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;I would like to take the opportunity of the &lt;a href="https://spring.io/blog/2019/04/10/spring-framework-5-2-0-m1-available-now"&gt;first milestone of Spring Framework 5.2&lt;/a&gt; to give a status overview of where we are when it comes to Spring and Kotlin. And I will make my best to focus on concrete improvements since I believe Spring and Kotlin share the same pragmatic mindset.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;I think it is all about choices. Choices that we (the Spring team) provide, but also choices that you as application developers have to make when starting a new Spring Boot application. For example:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;What language should I use?&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Annotated &lt;code&gt;@Controller&lt;/code&gt; or functional style?&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Spring MVC or WebFlux?&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;These questions are obviously highly subjective and usually depend on the project context, but I will share my opinionated point of view.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="java-or-kotlin"&gt;&lt;a class="anchor" href="#java-or-kotlin"&gt;&lt;/a&gt;Java or Kotlin?&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Java is the obvious default choice, but &lt;a href="https://kotlinlang.org/"&gt;Kotlin&lt;/a&gt; is an increasingly popular alternative. What are the reasons that could make a developer switch from Java to Kotlin? When people ask me, I usually says that Kotlin allows Java developers to leverage their existing skills to write shorter, safer and more expressive code. But to make an educated choice, we should identify more specific points.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;My favorite Kotlin feature is that it turns &lt;code&gt;null&lt;/code&gt;, the so-called (multiple) "billion-dollar mistake" into a safety feature. The error of Java is not &lt;code&gt;null&lt;/code&gt; itself, it is to not manage &lt;code&gt;null&lt;/code&gt; explicitly in its type system, leading to issues close to what we can observe in dynamic languages. Kotlin embraces &lt;code&gt;null&lt;/code&gt; by using it in its type system to &lt;a href="https://medium.com/@elizarov/dealing-with-absence-of-value-307b80534903"&gt;deal with the absence of value&lt;/a&gt;. In Kotlin, types like &lt;code&gt;String&lt;/code&gt; are not nullable so safe to use without precaution, while types like &lt;code&gt;String?&lt;/code&gt; are nullable and should be used with caution. The good news is that Kotlin compiler will raise potential errors at compile time, and you will be able to handle them gracefully with &lt;a href="https://kotlinlang.org/docs/reference/null-safety.html#safe-calls"&gt;safe calls&lt;/a&gt;, &lt;a href="https://kotlinlang.org/docs/reference/null-safety.html#elvis-operator"&gt;elvis operator&lt;/a&gt; or &lt;a href="https://kotlinlang.org/docs/reference/idioms.html#execute-if-not-null"&gt;execute if not &lt;code&gt;null&lt;/code&gt;&lt;/a&gt; blocks. And unlike Java &lt;code&gt;Optional&lt;/code&gt;, Kotlin null-safety is suitable for input parameters as well and does not force you to use a wrapper that impacts performances and readibility of your code.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="https://kotlinlang.org/docs/reference/type-safe-builders.html"&gt;DSLs&lt;/a&gt; are also another area where Kotlin shines. &lt;a href="https://gradle.org/kotlin/"&gt;Gradle Kotlin DSL&lt;/a&gt; (support on &lt;a href="https://start.spring.io"&gt;start.spring.io&lt;/a&gt; is &lt;a href="https://github.com/spring-io/initializr/pull/851"&gt;just around the corner&lt;/a&gt;) is a great example, allowing to use a very rich and flexible API with great discoverability and confidence thanks to Kotlin statically typed nature. Spring Framework provides Kotlin DSLs for &lt;a href="https://docs.spring.io/spring/docs/5.2.0.M1/spring-framework-reference/languages.html#kotlin-bean-definition-dsl"&gt;bean definition&lt;/a&gt;, &lt;a href="https://docs.spring.io/spring/docs/5.2.0.M1/spring-framework-reference/languages.html#kotlin-web"&gt;functional routing&lt;/a&gt; and even &lt;a href="https://docs.spring.io/spring/docs/5.2.0.M1/spring-framework-reference/languages.html#mockmvc-dsl"&gt;MockMvc&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;I could detail a lot of other good reasons to switch like &lt;a href="https://kotlinlang.org/docs/reference/functions.html#default-arguments"&gt;optional parameters with default values&lt;/a&gt;, the &lt;a href="https://kotlinlang.org/docs/reference/java-interop.html"&gt;great interoperability with Java APIs&lt;/a&gt; (like Spring), &lt;a href="https://kotlinlang.org/docs/reference/"&gt;extension functions&lt;/a&gt;, &lt;a href="https://kotlinlang.org/docs/reference/inline-functions.html#reified-type-parameters"&gt;reified type parameters&lt;/a&gt; to avoid type erasure, &lt;a href="https://kotlinlang.org/docs/reference/data-classes.html#data-classes"&gt;data classes&lt;/a&gt; or immutability encouraged by default, but I think you should just &lt;a href="https://play.kotlinlang.org/byExample/overview"&gt;learn Kotlin by example&lt;/a&gt; eventually helped by the &lt;a href="https://kotlinlang.org/docs/reference/"&gt;reference documentation&lt;/a&gt; and make your own judgement. You can also follow this step by step &lt;a href="https://spring.io/guides/tutorials/spring-boot-kotlin/"&gt;Spring Boot tutorial with Kotlin&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;So let&amp;#8217;s say I will choose Kotlin for my next Spring Boot project ;-)&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="annotated-code-controller-code-or-functional-style"&gt;&lt;a class="anchor" href="#annotated-code-controller-code-or-functional-style"&gt;&lt;/a&gt;Annotated &lt;code&gt;@Controller&lt;/code&gt; or functional style?&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;As I said in the introduction, choices depend of the context and are a matter of taste. I am a big fan of &lt;a href="https://docs.spring.io/spring/docs/5.2.0.M1/spring-framework-reference/languages.html#kotlin-web"&gt;functional routing with Kotlin&lt;/a&gt; given the very nice DSL and functional programming capabilities of this language. I am even working on exploring how we could define Spring Boot application configuration in a functional way via the experimental &lt;a href="https://spring.io/blog/2018/10/02/the-evolution-of-spring-fu"&gt;Kofu DSL for Spring Boot&lt;/a&gt; which is incubating in &lt;a href="https://github.com/spring-projects/spring-fu"&gt;Spring Fu&lt;/a&gt; repository.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;But today, let&amp;#8217;s say my team is composed of developers used to &lt;code&gt;@Controller&lt;/code&gt; programming model for years, and that I don&amp;#8217;t want to change everything at the same time, so let&amp;#8217;s keep &lt;code&gt;@Controller&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="spring-mvc-or-webflux"&gt;&lt;a class="anchor" href="#spring-mvc-or-webflux"&gt;&lt;/a&gt;Spring MVC or WebFlux?&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The choice we propose in term of web framework is the following.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;You can continue to use Spring MVC and all the related well known technologies that we continue to improve: Tomcat, JPA, etc. You can even leverage some reactive bits by using &lt;code&gt;WebClient&lt;/code&gt; modern API instead of &lt;code&gt;RestTemplate&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;But we also provide a reactive stack that includes &lt;a href="https://docs.spring.io/spring/docs/5.2.0.M1/spring-framework-reference/web-reactive.html#webflux"&gt;WebFlux&lt;/a&gt;, a web framework based on &lt;a href="http://www.reactive-streams.org/"&gt;Reactive Streams&lt;/a&gt; for those who want more scalability, a stack immune to latency (useful for microservices-oriented architecture) and better stream processing capabilities. Other parts of the ecosystem like Spring Data and Spring Security provide reactive support as well.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="sect2"&gt;
-&lt;h3 id="webflux-with-reactor-api-in-java"&gt;&lt;a class="anchor" href="#webflux-with-reactor-api-in-java"&gt;&lt;/a&gt;WebFlux with Reactor API in Java&lt;/h3&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Until now, using Spring reactive stack using WebFlux required a pretty big shift by switching IO related functionalities (web, persistence) from imperative to declarative/functional style by using APIs like Reactor &lt;a href="https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Mono.html"&gt;Mono&lt;/a&gt; and &lt;a href="https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Flux.html"&gt;Flux&lt;/a&gt; or RxJava similar types. This disruptive approach provides real advantages compared to imperative programming, but is also very different and requires a non trivial learning curve.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Let&amp;#8217;s see what that means with concrete code, and let&amp;#8217;s use this opportunity to show you how one can use &lt;a href="https://r2dbc.io/"&gt;R2DBC&lt;/a&gt; (Reactive Streams based alternative to JDBC) and &lt;a href="https://spring.io/projects/spring-data-r2dbc"&gt;Spring Data R2DBC&lt;/a&gt; to access SQL databases in a reactive way.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;If we would have chosen Java, we would have written the following &lt;code&gt;UserRepository&lt;/code&gt; class that exposes a reactive API to access SQL databases using the &lt;a href="https://docs.spring.io/spring-data/r2dbc/docs/1.0.0.M1/api/org/springframework/data/r2dbc/function/DatabaseClient.html"&gt;&lt;code&gt;DatabaseClient&lt;/code&gt;&lt;/a&gt; API provided by Spring Data R2DBC.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;class UserRepository {
-
-	private final DatabaseClient client;
-
-	public UserRepository(DatabaseClient client) {
-		this.client = client;
-	}
-
-	public Mono&amp;lt;Long&amp;gt; count() {
-		return client.execute().sql("SELECT COUNT(*) FROM users")
-			.as(Long.class).fetch().one();
-	}
-
-	public Flux&amp;lt;User&amp;gt; findAll() {
-		return client.select().from("users").as(User.class).fetch().all();
-	}
-
-	public Mono&amp;lt;User&amp;gt; findOne(String id) {
-		return client.execute()
-			.sql("SELECT * FROM users WHERE login = $1")
-			.bind(0, id).as(User.class).fetch().one();
-	}
-
-	public Mono&amp;lt;Void&amp;gt; deleteAll() {
-		return client.execute().sql("DELETE FROM users").fetch()
-			.one().then();
-	}
-
-	public Mono&amp;lt;Void&amp;gt; save(User user) {
-		return client.insert().into(User.class).table("users")
-			.using(user).then();
-	}
-
-	public Mono&amp;lt;Void&amp;gt; init() {
-		return client.execute().sql("CREATE TABLE ...").then()
-			.then(deleteAll())
-			.then(save(new User("smaldini", "St?phane", "Maldini")))
-			.then(save(new User("sdeleuze", "S?bastien", "Deleuze")))
-			.then(save(new User("bclozel", "Brian", "Clozel")));
-	}
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="admonitionblock note"&gt;
-&lt;table&gt;
-&lt;tr&gt;
-&lt;td class="icon"&gt;
-&lt;div class="title"&gt;Note&lt;/div&gt;
-&lt;/td&gt;
-&lt;td class="content"&gt;
-Saving the users could have been done in a fork-join way because these operations do not depend on each other, but for the sake of this comparison I use sequential operations chained with &lt;code&gt;then()&lt;/code&gt;.
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;You can see that in such API, &lt;code&gt;void&lt;/code&gt; becomes &lt;code&gt;Mono&amp;lt;Void&amp;gt;&lt;/code&gt;, &lt;code&gt;User&lt;/code&gt; becomes &lt;code&gt;Mono&amp;lt;User&amp;gt;&lt;/code&gt;. This allows to use them in a non-blocking way and provide access to a rich set of operators. But it also makes it mandatory to use &lt;code&gt;Mono&lt;/code&gt; wrapper and significantly change how you use these API. For example if some operations need to be done sequentially like in the &lt;code&gt;init()&lt;/code&gt; method which is straightforward with imperative code, here we have to build a declarative pipeline with the &lt;code&gt;then&lt;/code&gt; operator.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;code&gt;Flux&amp;lt;User&amp;gt;&lt;/code&gt; provides more added value since it allows to process the incoming users as a stream while usage of &lt;code&gt;List&amp;lt;User&amp;gt;&lt;/code&gt; as typically used in a blocking stack implies loading all the data in memory before processing it. Notice we could also have used &lt;code&gt;Mono&amp;lt;List&amp;lt;User&amp;gt;&amp;gt;&lt;/code&gt; here.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;On controller side, you can see that Spring WebFlux supports natively these reactive types, and you can also see another characteristic of Reactive Streams based API where exceptions are mostly used as an error signal carried by the reactive type instead of being thrown like in regular imperative code.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@RestController
-public class UserController {
-
-	private final UserRepository userRepository;
-
-	public UserController(UserRepository userRepository) {
-		this.userRepository = userRepository;
-	}
-
-	@GetMapping("/")
-	public Flux&amp;lt;User&amp;gt; findAll() {
-		return userRepository.findAll();
-	}
-
-	@GetMapping("/{id}")
-	public Mono&amp;lt;User&amp;gt; findOne(@PathVariable String id) {
-		return userRepository
-			.findOne(id)
-			.switchIfEmpty(Mono.error(
-				new CustomException("This user does not exist");
-	}
-
-	@PostMapping("/")
-	public Mono&amp;lt;Void&amp;gt; save(User user) {
-		return userRepository.save(user);
-	}
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect2"&gt;
-&lt;h3 id="webflux-with-coroutines-api-in-kotlin"&gt;&lt;a class="anchor" href="#webflux-with-coroutines-api-in-kotlin"&gt;&lt;/a&gt;WebFlux with coroutines API in Kotlin&lt;/h3&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;It is important to understand that Spring reactive support has been built on top of &lt;a href="http://www.reactive-streams.org/"&gt;Reactive Streams&lt;/a&gt; with interoperability in mind, and that Reactor is used for 2 different purpose:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;It is the Reactive Streams implementation that we use everywhere in Spring reactive infrastructure&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;It is also the default reactive public API exposed&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;But Spring reactive support has been designed from its inception to adapt easily to other asynchronous or reactive APIs like &lt;code&gt;CompletableFuture&lt;/code&gt;, RxJava 2, &lt;a href="https://docs.spring.io/spring/docs/5.2.0.M1/spring-framework-reference/languages.html#coroutines"&gt;and now coroutines&lt;/a&gt;. In that case we still leverage Reactor internally, adapting at public API level to a different end user reactive API.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;It is of course perfectly fine to continue to use &lt;code&gt;Flux&lt;/code&gt; and &lt;code&gt;Mono&lt;/code&gt; in Kotlin if you prefer this approach, but Spring Framework 5.2 introduces a new major feature: we can now use &lt;a href="https://kotlinlang.org/docs/reference/coroutines-overview.html"&gt;Kotlin coroutines&lt;/a&gt; to leverage Spring reactive stack in a more imperative way.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Coroutines are Kotlin lightweight threads allowing to write non-blocking code in an imperative way. On language side, suspending functions identified by the &lt;code&gt;suspend&lt;/code&gt; keyword provide an abstraction for asynchronous operations while on library side &lt;a href="https://github.com/Kotlin/kotlinx.coroutines"&gt;kotlinx.coroutines&lt;/a&gt; provides functions likes &lt;a href="https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/async.html"&gt;async { }&lt;/a&gt; and types like &lt;a href="https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-flow/index.html"&gt;Flow&lt;/a&gt; which is &lt;code&gt;Flux&lt;/code&gt; equivalent in coroutines world.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;So what look like &lt;code&gt;UserRepository&lt;/code&gt; and &lt;code&gt;UserController&lt;/code&gt; written in Kotlin instead of Java and using coroutines and &lt;code&gt;Flow&lt;/code&gt; instead or &lt;code&gt;Mono&lt;/code&gt; and &lt;code&gt;Flux&lt;/code&gt;?&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-kotlin" data-lang="kotlin"&gt;class UserRepository(private val client: DatabaseClient) {
-
-	suspend fun count(): Long =
-		client.execute().sql("SELECT COUNT(*) FROM users")
-			.asType&amp;lt;Long&amp;gt;().fetch().awaitOne()
-
-	fun findAll(): Flow&amp;lt;User&amp;gt; =
-		client.select().from("users").asType&amp;lt;User&amp;gt;().fetch().flow()
-
-	suspend fun findOne(id: String): User? =
-		client.execute()
-			.sql("SELECT * FROM users WHERE login = \$1")
-			.bind(0, id).asType&amp;lt;User&amp;gt;()
-			.fetch()
-			.awaitOneOrNull()
-
-	suspend fun deleteAll() =
-		client.execute().sql("DELETE FROM users").await()
-
-	suspend fun save(user: User) =
-		client.insert().into&amp;lt;User&amp;gt;().table("users").using(user).await()
-
-	suspend fun init() {
-		client.execute().sql("CREATE TABLE IF NOT EXISTS users (login varchar PRIMARY KEY, firstname varchar, lastname varchar);").await()
-		deleteAll()
-		save(User("smaldini", "St?phane", "Maldini"))
-		save(User("sdeleuze", "S?bastien", "Deleuze"))
-		save(User("bclozel", "Brian", "Clozel"))
-	}
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;You can see here that instead of returning for example &lt;code&gt;Mono&amp;lt;User&amp;gt;&lt;/code&gt;, we return &lt;code&gt;User&lt;/code&gt; (or more exactly its nullable variant &lt;code&gt;User?&lt;/code&gt;) in a suspending function that can be used in an imperative way. The differences in &lt;code&gt;init()&lt;/code&gt; method implementation illustrate that pretty well since we now use regular imperative code instead of chained &lt;code&gt;then&lt;/code&gt; invocations.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;But wait, how can I use coroutines directly on the &lt;code&gt;DatabaseClient&lt;/code&gt; type which is a reactive API based on &lt;code&gt;Mono&lt;/code&gt; and &lt;code&gt;Flux&lt;/code&gt;? This is made possible because Spring Data R2DBC also provides Kotlin extensions (see for example &lt;a href="https://github.com/spring-projects/spring-data-r2dbc/blob/master/src/main/kotlin/org/springframework/data/r2dbc/function/RowsFetchSpecExtensions.kt"&gt;this one&lt;/a&gt;) which allows you to add coroutines based methods on &lt;code&gt;DatabaseClient&lt;/code&gt; once imported. By convention, suspending methods are prefixed by &lt;code&gt;await&lt;/code&gt; or suffixed by &lt;code&gt;AndAwait&lt;/code&gt; and get a similar name to their &lt;code&gt;Mono&lt;/code&gt; based counterparts.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Now let&amp;#8217;s have a deeper look to this &lt;code&gt;Flow&amp;lt;User&amp;gt;&lt;/code&gt; return type. First, be aware that we are referring to &lt;a href="https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-flow/index.html"&gt;&lt;code&gt;kotlinx.coroutines.flow.Flow&lt;/code&gt;&lt;/a&gt;, not &lt;a href="https://docs.oracle.com/javase/9/docs/api/java/util/concurrent/Flow.html"&gt;&lt;code&gt;java.util.concurrent.Flow&lt;/code&gt;&lt;/a&gt; which is Reactive Streams container type provided with Java 9+.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;You will use &lt;code&gt;Flow&lt;/code&gt; API like you use Java 8+ &lt;code&gt;Stream&lt;/code&gt; or its Kotlin equivalent &lt;code&gt;Sequence&lt;/code&gt;, but the huge difference is that it is suitable for asynchronous operations and manages backpressure. So it is &lt;code&gt;Flux&lt;/code&gt; equivalent in coroutines world, suitable for hot or cold stream, finite or infinite streams, with the following main differences:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;Flow&lt;/code&gt; is push-based while &lt;code&gt;Flux&lt;/code&gt; is push-pull hybrid&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Backpressure is implemented via suspending functions&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;Flow&lt;/code&gt; has only a &lt;a href="https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-flow/collect.html"&gt;single suspending &lt;code&gt;collect&lt;/code&gt; method&lt;/a&gt; and operators are implemented as &lt;a href="https://kotlinlang.org/docs/reference/extensions.html"&gt;extensions&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href="https://github.com/Kotlin/kotlinx.coroutines/tree/master/kotlinx-coroutines-core/common/src/flow/operators"&gt;Operators are easy to implement&lt;/a&gt; thanks to coroutines&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Extensions allow to add custom operators to &lt;code&gt;Flow&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Collect operations are suspending functions&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href="https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/map.html"&gt;&lt;code&gt;map&lt;/code&gt; operator&lt;/a&gt; supports asynchronous operation (no need for &lt;code&gt;flatMap&lt;/code&gt;) since it takes a suspending function parameter&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Now let&amp;#8217;s have a look to the coroutines version of the controller:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-kotlin" data-lang="kotlin"&gt;@RestController
-class UserController(private val userRepository: UserRepository) {
-
-	@GetMapping("/")
-	fun findAll(): Flow&amp;lt;User&amp;gt; =
-		userRepository.findAll()
-
-	@GetMapping("/{id}")
-	suspend fun findOne(@PathVariable id: String): User? =
-		userRepository.findOne(id) ?:
-			throw CustomException("This user does not exist")
-
-	@PostMapping("/")
-	suspend fun save(user: User) =
-		userRepository.save(user)
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Again you can see that the code is very close of regular imperative code that we would have used with Spring MVC.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;In addition to providing coroutines extensions to &lt;code&gt;Flux&lt;/code&gt; and &lt;code&gt;Mono&lt;/code&gt; based APIs like &lt;code&gt;WebClient&lt;/code&gt;, &lt;code&gt;ServerRequest&lt;/code&gt; or &lt;code&gt;ServerResponse&lt;/code&gt;, Spring WebFlux now supports natively suspending functions and &lt;code&gt;Flow&lt;/code&gt; return types for annotated &lt;code&gt;@Controller&lt;/code&gt; classes.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect2"&gt;
-&lt;h3 id="asynchronous-operations-with-imperative-code"&gt;&lt;a class="anchor" href="#asynchronous-operations-with-imperative-code"&gt;&lt;/a&gt;Asynchronous operations with imperative code&lt;/h3&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Let&amp;#8217;s leverage &lt;code&gt;WebClient&lt;/code&gt; coroutines extensions to see how we can chain asynchronous calls. We are going to request a remote HTTP endpoint to get additional &lt;code&gt;UserDetail1&lt;/code&gt; and &lt;code&gt;UserDetail2&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-kotlin" data-lang="kotlin"&gt;@RestController
-class UserWithDetailsController(
-		private val userRepository: UserRepository,
-		private val client: WebClient) {
-
-	@GetMapping("/")
-	fun findAll(): Flow&amp;lt;UserWithDetails&amp;gt; =
-		userRepository.findAll().map(this::withDetails)
-
-	@GetMapping("/{id}")
-	suspend fun findOne(@PathVariable id: String): UserWithDetails {
-		val user: User = userRepository.findOne(id) ?:
-			throw CustomException("This user does not exist")
-		return withDetails(user)
-	}
-
-	private suspend fun withDetails(user: User): UserWithDetails {
-		val userDetail1 = client.get().uri("/userdetail1/${user.login}")
-			.accept(APPLICATION_JSON)
-			.awaitExchange().awaitBody&amp;lt;UserDetail1&amp;gt;()
-		val userDetail2 = client.get().uri("/userdetail2/${user.login}")
-			.accept(APPLICATION_JSON)
-			.awaitExchange().awaitBody&amp;lt;UserDetail2&amp;gt;()
-		return UserWithDetails(user, userDetail1, userDetail2)
-	}
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Here we are using &lt;code&gt;WebClient&lt;/code&gt; coroutines extensions like &lt;code&gt;awaitExchange()&lt;/code&gt; and &lt;code&gt;awaitBody()&lt;/code&gt; to perform asynchronous and non-blocking operations in a purely imperative way. And since &lt;code&gt;Flow&lt;/code&gt; &lt;a href="https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/map.html"&gt;&lt;code&gt;map&lt;/code&gt; operator&lt;/a&gt; takes a suspending function parameter, we can perform such operation in it, no need for &lt;code&gt;flatMap&lt;/code&gt; here like we would done it with reactive APIs in Java.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect2"&gt;
-&lt;h3 id="parallel-decomposition"&gt;&lt;a class="anchor" href="#parallel-decomposition"&gt;&lt;/a&gt;Parallel decomposition&lt;/h3&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;As seen previously, coroutines are sequential by default, but they can also be used to perform operations in parallel. Let&amp;#8217;s refactor our previous example to perform the 2 remote calls concurrently.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-kotlin" data-lang="kotlin"&gt;@RestController
-class UserWithDetailsController(
-		private val userRepository: UserRepository,
-		private val client: WebClient) {
-
-	@GetMapping("/")
-	fun findAll(): Flow&amp;lt;UserWithDetails&amp;gt; =
-		userRepository.findAll().map(this::withDetails)
-
-	@GetMapping("/{id}")
-	suspend fun findOne(@PathVariable id: String): UserWithDetails {
-		val user: User = userRepository.findOne(id) ?:
-			throw CustomException("This user does not exist")
-		return withDetails(user)
-	}
-
-	private suspend fun withDetails(user: User): UserWithDetails = coroutineScope {
-		val asyncDetail1 = async {
-			client.get().uri("/userdetail1/${user.login}")
-				.accept(APPLICATION_JSON)
-				.awaitExchange().awaitBody&amp;lt;UserDetail1&amp;gt;()
-		}
-		val asyncDetail2 = async {
-			client.get().uri("/userdetail2/${user.login}")
-				.accept(APPLICATION_JSON)
-				.awaitExchange().awaitBody&amp;lt;UserDetail2&amp;gt;()
-		}
-		UserWithDetails(user, asyncDetail1.await(), asyncDetail2.await())
-	}
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Here we leverage &lt;a href="https://medium.com/@elizarov/structured-concurrency-722d765aa952"&gt;structured concurrency&lt;/a&gt; to trigger parallel retrieval of the 2 user details by creating &lt;code&gt;Deferred&amp;lt;UserDetail1&amp;gt;&lt;/code&gt; and &lt;code&gt;Deferred&amp;lt;UserDetail2&amp;gt;&lt;/code&gt; instances via the &lt;code&gt;async {}&lt;/code&gt; builder, then we wait completion of these by calling the 2 &lt;code&gt;await()&lt;/code&gt; methods that will return the &lt;code&gt;UserDetail1&lt;/code&gt; and &lt;code&gt;UserDetail2&lt;/code&gt; instances when available.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="conclusion"&gt;&lt;a class="anchor" href="#conclusion"&gt;&lt;/a&gt;Conclusion&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;I think using Spring reactive stack with such coroutines and Kotlin &lt;code&gt;Flow&lt;/code&gt; APIs provides an interesting trade-of between imperative and declarative approaches. It allows to leverage WebFlux and Spring Data reactive scalability and features in a very approachable way.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Coroutines support in Spring WebFlux and Spring Data will be available as part of the upcoming Spring Boot 2.2 release. You can read the &lt;a href="https://docs.spring.io/spring/docs/5.2.0.M1/spring-framework-reference/languages.html#coroutines"&gt;reference documentation&lt;/a&gt; and can expect further improvements like coroutines support for &lt;a href="http://rsocket.io/"&gt;RSocket&lt;/a&gt; &lt;code&gt;@MessageMapping&lt;/code&gt; endpoints and &lt;code&gt;RSocketRequester&lt;/code&gt; extensions. Spring Data Moore will also provide similar coroutines extensions on Spring Data MongoDB, Cassandra and Redis. And Spring Data may provide support for &lt;a href="https://jira.spring.io/browse/DATACMNS-1508"&gt;coroutines repositories&lt;/a&gt; at some point. We are also going to make &lt;a href="https://github.com/Kotlin/kotlinx.coroutines/issues/284"&gt;Reactor and coroutines context interoperable&lt;/a&gt; to support security and reactive transactions.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;I would like to finish by saying thank you to many talented engineers without whom all of this would not have been possible:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Roman Elizarov and Vsevolod Tolstopyatov from Kotlin team for their incredible work on coroutines and &lt;code&gt;Flow&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Konrad Kaminski for the initial community driven coroutines support for Spring&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Jake Wharton for its early prototyping around unifying Rx and coroutines&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;St?phane Maldini and David Karnok for their inspirational work&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Juergen Hoeller, Rossen Stoyanchev and Brian Dussault for their confidence&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Mark Paluch and Oliver Drotbohm for their support on the persistence side&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;As usual, I am looking forward for feedback, &lt;a href="https://github.com/Kotlin/kotlinx.coroutines/issues/254"&gt;as well as Kotlin team on &lt;code&gt;Flow&lt;/code&gt; API&lt;/a&gt; since it is still in preview mode. Come to see my upcoming talks at &lt;a href="https://cfp.devoxx.fr/2019/talk/CWE-1971/Spring_Boot_avec_Kotlin,_Kofu_et_les_Coroutines"&gt;Devoxx France&lt;/a&gt;, &lt;a href="https://jax.de/serverside-enterprise-java/spring-boot-with-kotlin-functional-configuration-and-graalvm/"&gt;JAX&lt;/a&gt;, &lt;a href="https://2019.springio.net/sessions/spring-boot-with-kofu-dsl-and-coroutines"&gt;Spring I/O&lt;/a&gt; or &lt;a href="https://sunny-tech.io/schedule/2019-06-28?sessionId=31"&gt;Sunny Tech&lt;/a&gt; to know more.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Cheers!&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;</content>

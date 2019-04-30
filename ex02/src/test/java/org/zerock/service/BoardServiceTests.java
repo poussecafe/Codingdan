@@ -16,10 +16,10 @@ import lombok.extern.log4j.Log4j;
 @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
 @Log4j
 public class BoardServiceTests {
-	
-	@Setter(onMethod_ = {@Autowired})
+
+	@Setter(onMethod_ = { @Autowired })
 	private BoardService service;
-	
+
 	/*
 	 * @Test public void testExist() {
 	 * 
@@ -39,22 +39,22 @@ public class BoardServiceTests {
 	 * 
 	 * @Test public void testGet() { log.info(service.get(5L)); }
 	 */
-	
+
 	@Test
 	public void testDelete() {
 		log.info("REMOVE RESULT: " + service.remove(5L));
 	}
-	
+
 	@Test
 	public void testUpdate() {
 		BoardVO board = service.get(3L);
-		
-		if(board == null) {
+
+		if (board == null) {
 			return;
 		}
-		
+
 		board.setTitle("제목을 수정합니다.");
 		log.info("MODIFY RESULT: " + service.modify(board));
 	}
-	
+
 }
