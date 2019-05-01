@@ -36,16 +36,16 @@ public class BoardController {
 	@GetMapping("/list")
 	public void list(Criteria cri, Model model) {
 		log.info("list");
-		log.info("list: "+cri);
+		log.info("list: " + cri);
 		model.addAttribute("list", service.getList(cri));
-		
+
 		// 페이징 처리를 위해 PageDTO 담아 보내기
-		//model.addAttribute("pageMaker", new PageDTO(cri, 123));
-		
+		// model.addAttribute("pageMaker", new PageDTO(cri, 123));
+
 		// 실제 전체 게시글 수 구해서 적용
-		int total=service.getTotal(cri);
-		log.info("total: "+total);
-		
+		int total = service.getTotal(cri);
+		log.info("total: " + total);
+
 		model.addAttribute("pageMaker", new PageDTO(cri, total));
 	}
 
@@ -78,7 +78,7 @@ public class BoardController {
 	public void get(@RequestParam("bno") Long bno, Model model, @ModelAttribute("cri") Criteria cri) {
 
 		log.info("/get or modify");
-		log.info("get: "+cri);
+		log.info("get: " + cri);
 		model.addAttribute("board", service.get(bno));
 	}
 
@@ -92,9 +92,13 @@ public class BoardController {
 		if (service.modify(board)) {
 			rttr.addFlashAttribute("result", "success");
 		}
-		
+
+		// 페이징을 위한 파라미터
 		rttr.addAttribute("pageNum", cri.getPageNum());
 		rttr.addAttribute("amount", cri.getAmount());
+		// 검색 조건을 위한 파라미터
+		rttr.addAttribute("type", cri.getType());
+		rttr.addAttribute("keyword", cri.getKeyword());
 
 		return "redirect:/board/list";
 	}
@@ -108,10 +112,14 @@ public class BoardController {
 		if (service.remove(bno)) {
 			rttr.addFlashAttribute("result", "success");
 		}
-		
+
+		// 페이징을 위한 파라미터
 		rttr.addAttribute("pageNum", cri.getPageNum());
 		rttr.addAttribute("amount", cri.getAmount());
-		
+		// 검색 조건을 위한 파라미터
+		rttr.addAttribute("type", cri.getType());
+		rttr.addAttribute("keyword", cri.getKeyword());
+
 		return "redirect:/board/list";
 	}
 }

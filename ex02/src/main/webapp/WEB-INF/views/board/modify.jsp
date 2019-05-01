@@ -26,6 +26,9 @@
 						value='<c:out value="${cri.pageNum }"/>'> <input
 						type='hidden' name='amount'
 						value='<c:out value="${cri.amount }"/>'>
+						<!-- 검색 조건 유지를 위한 파라미터 추가 -->
+					<input type='hidden' name='keyword' value='<c:out value="${cri.keyword }"/>'>
+					<input type='hidden' name='type' value='<c:out value="${cri.type }"/>'>
 
 					<div class="form-group">
 						<label>Bno</label><input class="form-control" name='bno'
@@ -94,14 +97,22 @@
 				formObj.attr("action", "/board/list").attr("method", "get");
 				
 				// 필요한 파라미터만 복사해서 보관
+				// 페이징
 				var pageNumTag = $("input[name='pageNum']").clone();
 				var amountTag = $("input[name='amount']").clone();
+				// 검색
+				var keywordTag = $("input[name='keyword']").clone();
+				var typeTag = $("input[name='type']").clone();
+				
+
 				
 				// list로 이동할 때는 form 태그의 모든 내용은 삭제한 상태에서,
 				formObj.empty();
 				// 필요한 태그만 추가한 뒤 submit
 				formObj.append(pageNumTag);
 				formObj.append(amountTag);
+				formObj.append(keywordTag);
+				formObj.append(typeTag);
 				
 			}
 
