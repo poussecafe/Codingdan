@@ -3,3 +3,8 @@
 4월 29, 2019 22:36:05.77 [6128:7156:0429/223605.772:ERROR:browser_process_sub_thread.cc(209)] Waited 19 ms for network service
 4월 29, 2019 22:36:05.83 
 4월 29, 2019 22:36:05.83 KLIB_SelfTest return : KLR_OK
+
+5월 01, 2019 02:13:18.05 NEW SESSION
+5월 01, 2019 02:13:18.05 [8768:6072:0501/021318.051:ERROR:browser_process_sub_thread.cc(209)] Waited 43 ms for network service
+5월 01, 2019 02:13:18.14 
+5월 01, 2019 02:13:18.14 KLIB_SelfTest return : KLR_OK

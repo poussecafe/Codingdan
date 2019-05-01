@@ -20,6 +20,13 @@
 			<div class="panel-body">
 
 				<form role="form" action="/board/modify" method="post">
+
+					<!-- 페이지 번호 유지를 위한 파라미터 추가 -->
+					<input type='hidden' name='pageNum'
+						value='<c:out value="${cri.pageNum }"/>'> <input
+						type='hidden' name='amount'
+						value='<c:out value="${cri.amount }"/>'>
+
 					<div class="form-group">
 						<label>Bno</label><input class="form-control" name='bno'
 							value='<c:out value="${board.bno }"/>' readonly="readonly">
@@ -84,8 +91,18 @@
 
 			} else if (operation === 'list') {
 				// 목록으로 이동
-				self.location = "/board/list";
-				return;
+				formObj.attr("action", "/board/list").attr("method", "get");
+				
+				// 필요한 파라미터만 복사해서 보관
+				var pageNumTag = $("input[name='pageNum']").clone();
+				var amountTag = $("input[name='amount']").clone();
+				
+				// list로 이동할 때는 form 태그의 모든 내용은 삭제한 상태에서,
+				formObj.empty();
+				// 필요한 태그만 추가한 뒤 submit
+				formObj.append(pageNumTag);
+				formObj.append(amountTag);
+				
 			}
 
 			formObj.submit();

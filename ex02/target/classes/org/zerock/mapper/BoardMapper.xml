@@ -2,11 +2,32 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.zerock.mapper.BoardMapper">
 
-	<select id="getList" resultType="org.zerock.domain.BoardVO">
+	<!-- 힌트를 써서 order by를 대체한다 -->
+	<select id="getList" resultType="BoardVO">
 	<![CDATA[
-	select * from tbl_board where bno > 0
-	order by bno desc
+	select /*+INDEX_DESC(tbl_board pk_board)*/ * from tbl_board where bno > 0
 	]]>
+	</select>
+	
+	<!-- rownum 조건은 반드시 1이 포함되어야 하므로 rownum 검색 결과를 인라인뷰로 처리 -->
+	<select id="getListWithPaging" resultType="BoardVO">
+	<![CDATA[
+	select
+	bno, title, content, writer, regdate, updatedate
+	from
+	(
+	select /*+INDEX_DESC(tbl_board pk_board) */
+	rownum rn, bno, title, content, writer, regdate, updatedate
+	from
+	tbl_board
+	where rownum <= #{pageNum}*#{amount}
+	)
+	where rn > (#{pageNum}-1)*#{amount}
+	]]>
+	</select>
+
+	<select id="getTotalCount" resultType="int">
+		select count(*) from tbl_board where bno > 0
 	</select>
 
 	<insert id="insert">
