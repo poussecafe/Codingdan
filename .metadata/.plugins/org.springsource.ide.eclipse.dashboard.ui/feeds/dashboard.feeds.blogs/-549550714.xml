@@ -5,7 +5,22 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-05-01T14:19:00Z</updated>
+  <updated>2019-05-03T10:00:00Z</updated>
+  <entry>
+    <title>A Bootiful Podcast: Spring Cloud Engineer Olga Maciaszek-Sharma</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/05/03/a-bootiful-podcast-spring-cloud-engineer-olga-maciaszek-sharma" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2019-05-03:3663</id>
+    <updated>2019-05-03T10:00:00Z</updated>
+    <content type="html">&lt;p&gt;Hi Spring fans! In this installment &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to Spring Cloud engineeer &lt;a href="http://twitter.com/olga_maciaszek"&gt;Olga Maciaszek-Sharma (@olga_maciaszek)&lt;/a&gt; about joining the Spring team, testing, consumer driven contracts and consumer driven contract testing, and so much more.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="http://twitter.com/olga_maciaszek"&gt;Olga&amp;rsquo;s Twitter (@olga_maciaszek)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/615074445&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"&gt;&lt;/iframe&gt;&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>Spring Boot for Apache Geode &amp; Pivotal GemFire 1.0.0.RC2 Released!</title>
     <link rel="alternate" href="https://spring.io/blog/2019/05/01/spring-boot-for-apache-geode-pivotal-gemfire-1-0-0-rc2-released" />
@@ -1086,33 +1101,5 @@ public String hello(@CurrentSecurityContext
 &lt;p&gt;For a complete list of changes and upgrade instructions, please see the &lt;a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.2-Release-Notes"&gt;Spring Boot 2.2 Release Notes&lt;/a&gt; on the wiki and the &lt;a href="http://docs.spring.io/spring-boot/docs/2.2.0.M2/reference/html/"&gt;updated reference documentation&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;If you want to get started with 2.2 and try out the new features, you can bootstrap a new project on &lt;a href="https://start.spring.io"&gt;https://start.spring.io&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://projects.spring.io/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.2.0.M2/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - April 16th, 2019</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/04/16/this-week-in-spring-april-16th-2019" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2019-04-16:3645</id>
-    <updated>2019-04-16T09:08:26Z</updated>
-    <content type="html">&lt;p&gt;Hi Spring fans! What a week it&amp;rsquo;s been! When we last spoke I was in Capetown, South Africa or Johannesburg, South Africa. I&amp;rsquo;ve since been to Mauritius, back to Capetown, Serbia (for the amazing ITKonekt conference) and I&amp;rsquo;m now staring at the beautiful Bund river in beautiful Shanghai, China as I write this. &lt;/p&gt;
-&lt;p&gt;We&amp;rsquo;ve got a ton to get to this week, as usual, so let&amp;rsquo;s get to it. &lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Hi Spring fans! Welcome to yet another installment of &lt;em&gt;Spring Tips&lt;/em&gt;, this one on the just-released-in-&lt;code&gt;master&lt;/code&gt; support for &lt;a href="https://spring.io/blog/2019/04/15/spring-tips-rsocket-messaging-in-spring-boot-2-2"&gt;RSocket Messaging in Spring Boot 2.2&lt;/a&gt;. It&amp;rsquo;s here! It&amp;rsquo;s finally here! I was so excited to see this land and I hope you get a chance to try it out.&lt;/li&gt;
-  &lt;li&gt;Don&amp;rsquo;t miss this webinar coming on April 18th, &lt;a href="https://content.pivotal.io/webinars/apr-18-a-spring-developer-s-guide-to-the-pivotal-cloud-foundry-galaxy-webinar"&gt;&lt;em&gt;A Spring Developer¡¯s Guide to the Pivotal Cloud Foundry Galaxy Webinar&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/04/12/spring-session-for-apache-geode-pivotal-gemfire-2-2-0-m1-available"&gt;Spring Session for Apache Geode &amp;amp; Pivotal GemFire 2.2.0.M1 Available&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/04/12/spring-session-for-apache-geode-pivotal-gemfire-2-0-9-release-2-1-3-release-available"&gt;Spring Session for Apache Geode &amp;amp; Pivotal GemFire 2.0.9.RELEASE &amp;amp; 2.1.3.RELEASE Available&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Check out this post looking at the future of Kotlin and Spring, &lt;a href="https://spring.io/blog/2019/04/12/going-reactive-with-spring-coroutines-and-kotlin-flow"&gt;&lt;em&gt;Going Reactive with Spring, Coroutines and Kotlin Flow&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;In last week&amp;rsquo;s &lt;a href="https://spring.io/blog/2019/04/11/a-bootiful-podcast-rabobank-s-roy-braam-on-building-an-agile-bank"&gt;&lt;em&gt;A Bootiful Podcast&lt;/em&gt; I interview Rabobank&amp;rsquo;s Roy Braam on building an agile bank&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/04/11/spring-data-moore-m3-released"&gt;Spring Data Moore M3 released&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/04/10/spring-integration-smb-1-1-ga-available"&gt;Spring Integration SMB 1.1 GA Available&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/04/10/spring-framework-5-2-0-m1-available-now"&gt;Spring Framework 5.2.0.M1 available now&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/04/10/spring-data-lovelace-sr6-kay-sr14-ingalls-sr20-released"&gt;Spring Data Lovelace SR6, Kay SR14, Ingalls SR20 Released&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/04/10/spring-cloud-data-flow-2-0-2-ga-released"&gt;Spring Cloud Data Flow 2.0.2 GA Released&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Yet another great post on the Okta blog, &lt;a href="https://developer.okta.com/blog/2019/04/15/testing-spring-security-oauth-with-junit"&gt;&lt;em&gt;Upgrading Spring Security OAuth and JUnit Tests through the &#x1f440; of a Java Hipster&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;This is kind of interesting. It&amp;rsquo;s a blog that demonstrates how to create &lt;a href="https://kauri.io/article/311e46faf254462f9755e245a48de0cb/simple-kotlin-springboot-dapp-utilizing-web3j"&gt;simple Kotlin SpringBoot dApp utilizing web3j&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://twitter.com/mrbwilms/status/1117669789508489216?s=12"&gt;Happy birthday to the Spring Boot Chaos Monkey!&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content>
   </entry>
 </feed>
