@@ -40,6 +40,32 @@
 				<button data-oper='modify' class="btn btn-default">Modify</button>
 				<button data-oper='list' class="btn btn-info">List</button>
 
+				<!-- 댓글 목록 출력을 위한 div -->
+				<div class='row'>
+					<div class="col-lg-12">
+
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<i class="fa fa-comments fa-fw"></i>Reply
+							</div>
+
+							<div class="panel-body">
+								<ul class="chat">
+									<li class="left clearfix" data-rno='12'>
+										<div>
+											<div class="header">
+												<strong class="primary-font">user00</strong> <small
+													class="pull-right text-muted">2018-01-01 13:13</small>
+											</div>
+											<p>Good job!</p>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
 				<!-- form 태그에 게시물 번호(bno)를 담아서 넘긴다 -->
 				<form id='operForm' action="/board/modify" method="get">
 					<input type='hidden' id='bno' name='bno'
@@ -62,13 +88,36 @@
 <!-- 자바스크립트 모듈 패턴 적용 -->
 <script type="text/javascript" src="/resources/js/reply.js"></script>
 
-<!-- <script type="text/javascript">
+<script type="text/javascript">
 	$(document).ready(function() {
-		console.log(replyService);
+		var bnoValue='<c:out value="${board.bno}"/>';
+		var replyUL=$(".chat");
+		
+		// 파라미터가 없는 경우에는 자동으로 1페이지가 되도록 설정
+		showList(1);
+		
+		function showList(page){
+			replyService.getList({bno:bnoValue, page: page||1}, function(list){
+				var str="";
+				if(list==null || list.length==0){
+					replyUL.html("");
+					return;
+				}
+				
+				for(var i=0, len=list.length || 0; i<len;i++){
+					str += "<li class='left clearfix' data-rno'"+list[i].rno+"'>";
+					str += "<div><div class='hearder'><strong class='primary-font'>"+list[i].replyer+"</strong>";
+					str += "<small class='pull-right text-muted'>"+replyService.displayTime(list[i].replyDate)+"</small></div>";
+					str += "<p>"+list[i].reply+"</p></div></li>";
+				}
+				replyUL.html(str);
+			});
+		}
 	});
 </script>
 
-<script type="text/javascript">
+<!-- 테스트 코드 -->
+<!-- <script type="text/javascript">
 	console.log("========================");
 	console.log("JS TEST");
 
@@ -81,7 +130,7 @@
 	}, function(result) {
 		alert("RESULT: " + result);
 	});
-</script> -->
+</script>
 
 <script type="text/javascript">
 	console.log("========================");
@@ -98,6 +147,33 @@
 		}
 	});
 </script>
+
+<script type="text/javascript">
+	replyService.remove(130, function(count) {
+		console.log(count);
+		if (count === "success") {
+			alert("REMOVED");
+		}
+	}, function(err) {
+		alert('ERROR');
+	});
+</script>
+
+<script type="text/javascript">
+	replyService.update({
+		rno : 22,
+		bno : bnoValue,
+		reply : "Modify Reply.........."
+	}, function(result) {
+		alert("수정 완료....");
+	});
+</script>
+
+<script type="text/javascript">
+	replyService.get(10, function(data) {
+		console.log(data);
+	});
+</script> -->
 
 <script type="text/javascript">
 	$(document).ready(function() {
