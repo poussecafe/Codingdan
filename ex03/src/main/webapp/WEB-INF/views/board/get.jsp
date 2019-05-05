@@ -47,6 +47,8 @@
 						<div class="panel panel-default">
 							<div class="panel-heading">
 								<i class="fa fa-comments fa-fw"></i>Reply
+								<button id='addReplyBtn' class='btn btn-outline-primary'>New
+									Reply</button>
 							</div>
 
 							<div class="panel-body">
@@ -61,6 +63,44 @@
 										</div>
 									</li>
 								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- 모달 -->
+				<div class="modal" tabindex="-1" role="dialog">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h4 class="modal-title" id="myModalLabel">REPLY MODAL</h4>
+								<button type="button" class="close" data-dismiss="modal"
+									aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<div class="form-group">
+									<Label>Reply</Label> <input class="form-control" name='reply'
+										value="New Reply!!!!!">
+								</div>
+								<div class="form-group">
+									<Label>Replyer</Label> <input class="form-control"
+										name='replyer' value="replyer">
+								</div>
+								<div class="form-group">
+									<Label>Reply Date</Label> <input class="form-control"
+										name='replyDate' value="">
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button id='modalModBtn' type="button" class="btn btn-warning">Modify
+								</button>
+								<button id='modalRemoveBtn' type="button" class="btn btn-danger">Remove</button>
+								<button id='modalRegisterBtn' type='button'
+									class='btn btn-primary'>Register</button>
+								<button id='modalCloseBtn' type="button" class="btn btn-default"
+									data-dismiss="modal">Close</button>
 							</div>
 						</div>
 					</div>
@@ -89,31 +129,117 @@
 <script type="text/javascript" src="/resources/js/reply.js"></script>
 
 <script type="text/javascript">
-	$(document).ready(function() {
-		var bnoValue='<c:out value="${board.bno}"/>';
-		var replyUL=$(".chat");
-		
-		// 파라미터가 없는 경우에는 자동으로 1페이지가 되도록 설정
-		showList(1);
-		
-		function showList(page){
-			replyService.getList({bno:bnoValue, page: page||1}, function(list){
-				var str="";
-				if(list==null || list.length==0){
-					replyUL.html("");
-					return;
-				}
-				
-				for(var i=0, len=list.length || 0; i<len;i++){
-					str += "<li class='left clearfix' data-rno'"+list[i].rno+"'>";
-					str += "<div><div class='hearder'><strong class='primary-font'>"+list[i].replyer+"</strong>";
-					str += "<small class='pull-right text-muted'>"+replyService.displayTime(list[i].replyDate)+"</small></div>";
-					str += "<p>"+list[i].reply+"</p></div></li>";
-				}
-				replyUL.html(str);
-			});
-		}
-	});
+	$(document)
+			.ready(
+					function() {
+						var bnoValue = '<c:out value="${board.bno}"/>';
+						var replyUL = $(".chat");
+
+						// 파라미터가 없는 경우에는 자동으로 1페이지가 되도록 설정
+						showList(1);
+
+						function showList(page) {
+							replyService
+									.getList(
+											{
+												bno : bnoValue,
+												page : page || 1
+											},
+											function(list) {
+												var str = "";
+												if (list == null
+														|| list.length == 0) {
+													replyUL.html("");
+													return;
+												}
+
+												for (var i = 0, len = list.length || 0; i < len; i++) {
+													str += "<li class='left clearfix' data-rno='"+list[i].rno+"'>";
+													str += "<div><div class='hearder'><strong class='primary-font'>"
+															+ list[i].replyer
+															+ "</strong>";
+													str += "<small class='pull-right text-muted'>"
+															+ replyService
+																	.displayTime(list[i].replyDate)
+															+ "</small></div>";
+													str += "<p>"
+															+ list[i].reply
+															+ "</p></div></li>";
+												}
+												replyUL.html(str);
+											});
+						}
+
+						// 모달 관련 처리
+
+						var modal = $(".modal");
+						var modalInputReply = modal.find("input[name='reply']");
+						var modalInputReplyer = modal
+								.find("input[name='replyer']");
+						var modalInputReplyDate = modal
+								.find("input[name='replyDate']");
+
+						var modalModBtn = $("#modalModBtn");
+						var modalRemoveBtn = $("#modalRemoveBtn");
+						var modalRegisterBtn = $("#modalRegisterBtn");
+
+						// 댓글 작성 모달창 활성화 클릭 이벤트
+						$("#addReplyBtn").on("click", function(e) {
+							modal.find("input").val("");
+							modalInputReplyDate.closest("div").hide();
+							modal.find("button[id!='modalCloseBtn']").hide();
+
+							modalRegisterBtn.show();
+
+							$(".modal").modal("show");
+
+						});
+
+						// 새로운 댓글 추가
+						modalRegisterBtn.on("click", function(e) {
+							var reply = {
+								reply : modalInputReply.val(),
+								replyer : modalInputReplyer.val(),
+								bno : bnoValue
+							};
+							replyService.add(reply, function(result) {
+								alert(result);
+
+								// 등록 내용이 다시 등록되지 않도록 입력 항목을 비우고 모달창 닫기
+								modal.find("input").val("");
+								modal.modal("hide");
+
+								// 댓글 추가 후 목록 갱신
+								showList(1);
+							});
+						});
+
+						// 댓글 클릭 이벤트 처리
+						replyUL.on("click", "li", function(e) {
+							var rno = $(this).data("rno");
+
+							console.log(rno);
+
+							replyService.get(rno, function(reply) {
+								console.log(modalInputReply.val());
+								modalInputReply.val(reply.reply);
+								modalInputReplyer.val(reply.replyer);
+								modalInputReplyDate.val(
+										replyService
+												.displayTime(reply.replyDate))
+										.attr("readonly", "readonly");
+								modal.data("rno", reply.rno);
+
+								modal.find("button[id!='modalCloseBtn']")
+										.hide();
+								modalModBtn.show();
+								modalRemoveBtn.show();
+
+								$(".modal").modal("show");
+							});
+						});
+
+					});
 </script>
 
 <!-- 테스트 코드 -->
