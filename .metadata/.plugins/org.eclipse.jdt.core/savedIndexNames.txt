@@ -43,7 +43,6 @@ INDEX VERSION 1.131+C:\Users\min\Desktop\min\Codingdan\.metadata\.plugins\org.ec
 1703361771.index
 1043758707.index
 2051705981.index
-223198443.index
 2487545169.index
 3530313083.index
 3564154003.index

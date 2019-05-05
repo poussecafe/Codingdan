@@ -24,4 +24,6 @@ public interface ReplyMapper {
 	// @Param의 변수명이 Mapper.xml의 #{변수명}과 매칭된다
 	public List<ReplyVO> getListWithPaging(@Param("cri") Criteria cri, @Param("bno") Long bno);
 
+	// 댓글 갯수
+	public int getCountByBno(Long bno);
 }
