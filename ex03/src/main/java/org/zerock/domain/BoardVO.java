@@ -13,4 +13,7 @@ public class BoardVO {
 	private String writer;
 	private Date regdate;
 	private Date updateDate;
+	
+	// 댓글 갯수
+	private int replyCnt;
 }

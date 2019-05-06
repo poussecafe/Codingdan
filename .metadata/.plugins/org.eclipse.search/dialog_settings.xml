@@ -69,7 +69,7 @@
 		</list>
 	</section>
 	<section name="SearchDialog">
-		<item value="org.eclipse.search.internal.ui.text.TextSearchPage" key="PREVIOUS_PAGE"/>
+		<item value="org.eclipse.pde.internal.ui.search.SearchPage" key="PREVIOUS_PAGE"/>
 	</section>
 	<section name="DialogBounds_SearchDialog">
 		<item value="1226" key="DIALOG_WIDTH"/>

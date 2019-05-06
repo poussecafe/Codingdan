@@ -37,7 +37,12 @@
 							<!-- 게시물 제목에 조회 페이지로 가는 링크 걸기, 현재창 내에서 이동 -->
 							<!-- 새창을 열고 싶다면 a 태그 속성에 target='_blank' 추가 -->
 							<td><a class='move' href='<c:out value="${board.bno }"/>'><c:out
-										value="${board.title }" /></a></td>
+										value="${board.title }" />
+										
+										<!-- 댓글 갯수 반영 -->
+										<b>[<c:out value="${board.replyCnt }" />]</b>
+										
+										</a></td>
 							<td><c:out value="${board.writer }" /></td>
 							<td><fmt:formatDate pattern="yyyy-MM-dd"
 									value="${board.regdate }" /></td>

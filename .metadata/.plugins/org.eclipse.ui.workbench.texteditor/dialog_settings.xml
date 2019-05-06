@@ -2,25 +2,27 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="" key="selection"/>
+		<item value="log4jdbc" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="jackson-data"/>
-			<item value="jackson"/>
+			<item value="log4jdbc"/>
+			<item value="log4"/>
+			<item value="junit"/>
+			<item value="log4j2"/>
+			<item value="mybatis"/>
+			<item value="tx"/>
+			<item value="aspect"/>
+			<item value="pageNum"/>
 			<item value="paginate"/>
 			<item value="pagination"/>
-			<item value="static-top"/>
-			<item value="page-wrapper"/>
-			<item value="admin"/>
-			<item value="../"/>
-			<item value="log4j"/>
-			<item value="log"/>
-			<item value="hikari"/>
-			<item value="test"/>
-			<item value="junit"/>
+			<item value="content"/>
+			<item value="modal"/>
+			<item value="pull"/>
+			<item value="justify"/>
+			<item value="logout"/>
 		</list>
 		<list key="replacehistory">
 			<item value="/resources/"/>
@@ -30,7 +32,7 @@
 		<item value="340" key="DIALOG_WIDTH"/>
 		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
 		<item value="454" key="DIALOG_HEIGHT"/>
-		<item value="436" key="DIALOG_X_ORIGIN"/>
-		<item value="228" key="DIALOG_Y_ORIGIN"/>
+		<item value="1391" key="DIALOG_X_ORIGIN"/>
+		<item value="153" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>
