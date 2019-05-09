@@ -5,6 +5,59 @@
 
 <%@include file="../includes/header.jsp"%>
 
+<style>
+.uploadResult {
+	width: 100%;
+	background-color: gray;
+}
+
+.uploadResult ul {
+	display: flex;
+	flex-flow: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.uploadResult ul li {
+	list-style: none;
+	padding: 10px;
+	align-content: center;
+	text-align: center;
+}
+
+.uploadResult ul li img {
+	width: 100px;
+}
+
+.uploadResult ul li span {
+	color: white;
+}
+
+.bigPictureWrapper {
+	position: absolute;
+	display: none;
+	justify-content: conter;
+	align-items: center;
+	top: 0%;
+	width: 100%;
+	height: 100%;
+	background-color: gray;
+	z-index: 100;
+	background: rgba(255, 255, 255, 0.5);
+}
+
+.bigPicture {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.bigPicture img {
+	width: 600px;
+}
+</style>
+
 <div class="row">
 	<div class="col-lg-12">
 		<h1 class="page-header">Board Register</h1>
@@ -37,5 +90,131 @@
 		</div>
 	</div>
 </div>
+
+<!-- 파일 첨부 -->
+<div class="row">
+	<div class="col-lg-12">
+		<div class="panel panel-default">
+
+			<div class="panel-heading">File Attach</div>
+			<div class="panel-body">
+				<div class="form-group uploadDiv">
+					<input type="file" name='uploadFile' multiple>
+				</div>
+				<div class='uploadResult'>
+					<ul>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<script>
+$(document).ready(function(e){
+	
+	var formObj = $("form[role='form']");
+	
+	$("button[type='submit']").on("click", function(e){
+	
+	e.preventDefault();
+	
+	console.log("submit clicked");
+	});
+	
+	
+	// RegExp 객체의 생성자 함수를 사용하면 정규식이 실행 시점에 컴파일 된다
+	var regex = new RegExp("(.*?)\.(exe|sh|zip|alz)$");
+	var maxSize = 5242880; //5MB
+	
+	function checkExtension(fileName, fileSize){
+		
+		if(fileSize >= maxSize){
+			alert("파일 사이즈 초과");
+			return false;
+		}
+		
+		if(regex.test(fileName)){
+			alert("해당 종류의 파일은 업로드할 수 없습니다.");
+			return false;
+		}
+		
+		return true;
+	}
+	
+	// 섬네일 처리 함수
+	function showUploadResult(uploadResultArr){
+		
+		if(!uploadResultArr || uploadResultArr.length ==0){return;}
+		
+		var uploadUL = $(".uploadResult ul");
+		var str="";
+		
+		$(uploadResultArr).each(function(i, obj){
+			
+			// 이미지 파일일 경우
+			if(obj.image){
+				
+				var fileCallPath = encodeURIComponent(obj.uploadPath+"/s_"+obj.uuit+"_"+obj.fileName);
+				
+				str += "<li><div>";
+				str += "<span>"+obj.fileName+"</span>";
+				str += "<button type='button' class='btn btn-warning btn-circle'><i class='fa fa-times'></i></button><br>";
+				str += "<img src='/display?fileName="+fileCallPath+"'>";
+				str += "</div>";
+				str += "</li>";
+				
+			} else {
+				
+				var fileCallPath = encodeURIComponent(obj.uploadPath+"/"+obj.uuid+"_"+obj.fileName);
+				var fileLink = fileCallPath.replace(new RegExp(/\\/g), "/");
+				
+				str += "<li><div>";
+				str += "<span>"+obj.fileName+"</span>";
+				str += "<button type='button' class='btn btn-warning btn-circle'><i class='fa fa-times'></i></button><br>";
+				str += "<img src='/resources/img/attach.png'></a>";
+				str +="</div";
+				str +="</li>";
+				
+			}
+			
+		});
+	}
+	
+	$("input[type='file']").change(function(e){
+		
+		var formData = new FormData();
+		var inputFile = $("input[name='uploadFile']");
+		var files=inputFile[0].files;
+		
+		for(var i=0; i<files.length; i++){
+			
+			if(!checkExtentsion(files[i].name, files[i].size)){
+				return false;
+			}
+			
+			formData.append("uploadFile", files[i]);
+			
+		}
+		
+		$.ajax({
+			url: '/uploadAjaxAction',
+			processData: false,
+			contentType: false,
+			data: formData,
+			type: 'POST',
+			dataType: 'json',
+			success: function(result){
+				console.log(result);
+				showUploadResult(result); // 업로드 결과 처리 함수
+			}
+		});
+		
+	});
+	
+});
+
+</script>
 
 <%@include file="../includes/footer.jsp"%>
