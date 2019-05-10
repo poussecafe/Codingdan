@@ -2,6 +2,7 @@ package org.zerock.service;
 
 import java.util.List;
 
+import org.zerock.domain.BoardAttachVO;
 import org.zerock.domain.BoardVO;
 import org.zerock.domain.Criteria;
 
@@ -21,4 +22,7 @@ public interface BoardService {
 	
 	// 전체 게시글 수
 	public int getTotal(Criteria cri);
+	
+	// 첨부 파일 데이터 가지고 오기
+	public List<BoardAttachVO> getAttachList(Long bno);
 }
