@@ -60,11 +60,19 @@ public class BoardController {
 	// RedirectAttributes를 파라미터로 지정: 등록 작업이 끝난 후 다시 목록 화면으로 이동하기 위함, 추가적으로 등록된 게시물의
 	// 번호를 같이 전달하기 위해서 이용
 	public String register(BoardVO board, RedirectAttributes rttr) {
+		
+		log.info("======================");
 		log.info("register: " + board);
 
-		service.register(board);
+		if(board.getAttachList() != null) {
+			board.getAttachList().forEach(attach -> log.info(attach));
+		}
+		
+		log.info("==========================");
+		
+		// service.register(board);
 
-		rttr.addFlashAttribute("result", board.getBno());
+		// rttr.addFlashAttribute("result", board.getBno());
 
 		// 접두어 'redirect:' 사용: 스프링 MVC가 내부적으로 response.sendRedirect()를 처리
 		return "redirect:/board/list";
