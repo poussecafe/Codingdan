@@ -49,15 +49,34 @@ public class BoardServiceImpl implements BoardService {
 		return mapper.read(bno);
 	}
 
+	// 기존의 첨부 파일 관련 데이터 삭제 후 다시 첨부 파일 데이터 추가
+	@Transactional
 	@Override
 	public boolean modify(BoardVO board) {
 		log.info("modify..........." + board);
-		return mapper.update(board) == 1;
+		
+		attachMapper.deleteAll(board.getBno());
+		
+		boolean modifyResult = mapper.update(board)==1;
+		
+		if(modifyResult && board.getAttachList().size()>0) {
+			board.getAttachList().forEach(attach->{
+				attach.setBno(board.getBno());
+				attachMapper.insert(attach);
+			});
+		}
+		
+		return modifyResult;
 	}
 
+	// 게시물과 첨부 파일 삭제가 같이 처리되도록 해준다
+	@Transactional
 	@Override
 	public boolean remove(Long bno) {
 		log.info("remove.............." + bno);
+		
+		attachMapper.deleteAll(bno);
+		
 		return mapper.delete(bno) == 1;
 	}
 

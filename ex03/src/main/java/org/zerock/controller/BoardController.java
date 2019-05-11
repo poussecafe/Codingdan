@@ -1,5 +1,8 @@
 package org.zerock.controller;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
@@ -67,19 +70,19 @@ public class BoardController {
 	// RedirectAttributes를 파라미터로 지정: 등록 작업이 끝난 후 다시 목록 화면으로 이동하기 위함, 추가적으로 등록된 게시물의
 	// 번호를 같이 전달하기 위해서 이용
 	public String register(BoardVO board, RedirectAttributes rttr) {
-		
+
 		log.info("======================");
 		log.info("register: " + board);
 
-		if(board.getAttachList() != null) {
+		if (board.getAttachList() != null) {
 			board.getAttachList().forEach(attach -> log.info(attach));
 		}
-		
-		log.info("==========================");
-		
-		 service.register(board);
 
-		 rttr.addFlashAttribute("result", board.getBno());
+		log.info("==========================");
+
+		service.register(board);
+
+		rttr.addFlashAttribute("result", board.getBno());
 
 		// 접두어 'redirect:' 사용: 스프링 MVC가 내부적으로 response.sendRedirect()를 처리
 		return "redirect:/board/list";
@@ -123,8 +126,16 @@ public class BoardController {
 	// 페이지 번호 유지를 위해 Criteria 객체를 파라미터로 추가, rttr에 담아서 뷰 페이지로 전달
 	public String remove(@RequestParam("bno") Long bno, @ModelAttribute("cri") Criteria cri, RedirectAttributes rttr) {
 		log.info("remove...." + bno);
+		
+		
+		// 삭제 전에 먼저 게시물의 첨부 파일 목록 확보
+		List<BoardAttachVO> attachList = service.getAttachList(bno);
 
 		if (service.remove(bno)) {
+			
+			// 첨부 파일 삭제
+			deleteFiles(attachList);
+			
 			rttr.addFlashAttribute("result", "success");
 		}
 
@@ -135,14 +146,42 @@ public class BoardController {
 		rttr.addAttribute("type", cri.getType());
 		rttr.addAttribute("keyword", cri.getKeyword());
 
-		return "redirect:/board/list";
+		return "redirect:/board/list"+cri.getListLink();
 	}
-	
+
 	// 첨부 파일 데이터를 JSON 형식으로 반환한다
-	@GetMapping(value="/getAttachList", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@GetMapping(value = "/getAttachList", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	@ResponseBody
-	public ResponseEntity<List<BoardAttachVO>> getAttachList(Long bno){
+	public ResponseEntity<List<BoardAttachVO>> getAttachList(Long bno) {
 		log.info("getAttachList " + bno);
 		return new ResponseEntity<>(service.getAttachList(bno), HttpStatus.OK);
+	}
+
+	// 파일 삭제 처리 메서드
+	private void deleteFiles(List<BoardAttachVO> attachList) {
+		if (attachList == null || attachList.size() == 0) {
+			return;
+		}
+
+		log.info("delete attach files...........................");
+		log.info(attachList);
+
+		attachList.forEach(attach -> {
+			try {
+				Path file = Paths.get(
+						"C:\\upload\\" + attach.getUploadPath() + "\\" + attach.getUuid() + "_" + attach.getFileName());
+
+				Files.deleteIfExists(file);
+
+				if (Files.probeContentType(file).startsWith("image")) {
+					Path thumbNail = Paths.get("C:\\upload\\" + attach.getUploadPath() + "\\s_" + attach.getUuid() + "_"
+							+ attach.getFileName());
+
+					Files.delete(thumbNail);
+				}
+			} catch (Exception e) {
+				log.error("delete file error" + e.getMessage());
+			}
+		});
 	}
 }
