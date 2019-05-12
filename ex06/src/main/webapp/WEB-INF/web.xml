@@ -36,7 +36,7 @@
 
 	<!-- 시큐리티 필터 설정 -->
 	<filter>
-		<filter-name>springSecurityFileterChain</filter-name>
+		<filter-name>springSecurityFilterChain</filter-name>
 		<filter-class>org.springframework.web.filter.DelegatingFilterProxy
 		</filter-class>
 	</filter>

@@ -5,13 +5,34 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+
+	<!-- 스프링 시큐리티 동작을 위해서는 Authentication Manager와 스프링 시큐리티의 시작 지점이 필요하다 -->
+
 	<security:http>
+
+		<security:intercept-url pattern="/sample/all"
+			access="permitAll" />
+		<security:intercept-url
+			pattern="/sample/member" access="hasRole('ROLE_MEMBER')" />
+		<security:intercept-url
+			pattern="/sample/admin" access="hasRole('ROLE_ADMIN')" />
 
 		<security:form-login />
 
 	</security:http>
 
 	<security:authentication-manager>
+
+		<!-- member라는 계정 정보를 가진 사용자가 로그인을 할 수 있도록 설정 -->
+		<security:authentication-provider>
+			<security:user-service>
+			<!-- 패스워드 인코딩 처리 없이 쓰려면 패스워드 앞에 {noop} 추가 -->
+				<security:user name="member" password="{noop}member"
+					authorities="ROLE_MEMBER" />
+				<security:user name="admin" password="{noop}admin"
+					authorities="ROLE_MEMBER, ROLE_ADMIN" />
+			</security:user-service>
+		</security:authentication-provider>
 
 	</security:authentication-manager>
 
