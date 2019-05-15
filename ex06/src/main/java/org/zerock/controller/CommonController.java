@@ -17,4 +17,19 @@ public class CommonController {
 		
 		model.addAttribute("msg", "Access Denied");
 	}
+	
+	// 로그인 페이지 속성의 URI는 반드시 GET 방식으로 접근하는 URI 지정
+	@GetMapping("/customLogin")
+	public void loginInput(String error, String logout, Model model) {
+		log.info("error: "+error);
+		log.info("logout: "+logout);
+		
+		if(error != null) {
+			model.addAttribute("error", "Login Error Check Your Account");
+		}
+		
+		if(logout != null) {
+			model.addAttribute("logout", "Logout!");
+		}
+	}
 }

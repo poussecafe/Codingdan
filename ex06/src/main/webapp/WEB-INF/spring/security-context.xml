@@ -7,8 +7,14 @@
 
 
 	<!-- 스프링 시큐리티 동작을 위해서는 Authentication Manager와 스프링 시큐리티의 시작 지점이 필요하다 -->
-<bean id="customAccessDenied" class="org.zerock.security.CustomAccessDeniedHandler"></bean>
 
+	<!-- 에러 페이지 핸들러 빈으로 등록 -->
+	<bean id="customAccessDenied"
+		class="org.zerock.security.CustomAccessDeniedHandler"></bean>
+
+	<!-- 커스텀 로그인 페이지 핸들러 빈으로 등록 -->
+	<bean id="customLoginSuccess"
+		class="org.zerock.security.CustomLoginSuccessHandler"></bean>
 
 	<security:http auto-config="true" use-expressions="true">
 
@@ -16,16 +22,20 @@
 			access="permitAll" />
 		<security:intercept-url
 			pattern="/sample/member" access="hasRole('ROLE_MEMBER')" />
-		<security:intercept-url
-			pattern="/sample/admin" access="hasRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/sample/admin"
+			access="hasRole('ROLE_ADMIN')" />
 
-		<security:form-login />
-		
+		<!-- <security:form-login /> -->
+
+		<!-- 커스텀 로그인 페이지 지정 -->
+		<security:form-login login-page="/customLogin" authentication-success-handler-ref="customLoginSuccess"/>
+
 		<!-- 에러 페이지 지정 -->
 		<!-- <security:access-denied-handler error-page="/accessError"/> -->
-		
+
 		<!-- AccessDeniedHandler 인터페이스 직접 구현 -->
-<security:access-denied-handler ref="customAccessDenied" />
+		<security:access-denied-handler
+			ref="customAccessDenied" />
 
 	</security:http>
 
@@ -34,7 +44,7 @@
 		<!-- member라는 계정 정보를 가진 사용자가 로그인을 할 수 있도록 설정 -->
 		<security:authentication-provider>
 			<security:user-service>
-			<!-- 패스워드 인코딩 처리 없이 쓰려면 패스워드 앞에 {noop} 추가 -->
+				<!-- 패스워드 인코딩 처리 없이 쓰려면 패스워드 앞에 {noop} 추가 -->
 				<security:user name="member" password="{noop}member"
 					authorities="ROLE_MEMBER" />
 				<security:user name="admin" password="{noop}admin"
