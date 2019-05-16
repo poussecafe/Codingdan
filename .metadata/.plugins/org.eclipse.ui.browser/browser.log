@@ -29,3 +29,6 @@
 5월 11, 2019 03:37:41.45 [3832:3008:0511/033741.449:ERROR:browser_process_sub_thread.cc(217)] Waited 43 ms for network service
 5월 11, 2019 03:37:41.54 
 5월 11, 2019 03:37:41.55 KLIB_SelfTest return : KLR_OK
+
+5월 16, 2019 23:10:48.86 NEW SESSION
+5월 16, 2019 23:10:48.86 [7712:9040:0516/231048.854:ERROR:shader_disk_cache.cc(258)] Failed to create shader cache entry: -2

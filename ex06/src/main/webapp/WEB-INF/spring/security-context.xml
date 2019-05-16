@@ -12,9 +12,16 @@
 	<bean id="customAccessDenied"
 		class="org.zerock.security.CustomAccessDeniedHandler"></bean>
 
-	<!-- 커스텀 로그인 페이지 핸들러 빈으로 등록 -->
-	<bean id="customLoginSuccess"
-		class="org.zerock.security.CustomLoginSuccessHandler"></bean>
+	<!-- 커스텀 로그인 페이지 핸들러 빈으로 등록(스프링 시큐리티의 기본 구조 사용) -->
+	 <bean id="customLoginSuccess"
+		class="org.zerock.security.CustomLoginSuccessHandler"></bean> 
+
+	<!-- 커스텀 패스워드 인코더를 빈으로 등록 -->
+	<bean id="customPasswordEncoder"
+		class="org.zerock.security.CustomNoOpPasswordEncoder"></bean>
+
+		<!-- 기존 테이블을 사용하여 스프링 시큐리티 패스워드 인코딩 -->
+<bean id="bcryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
 
 	<security:http auto-config="true" use-expressions="true">
 
@@ -28,10 +35,15 @@
 		<!-- <security:form-login /> -->
 
 		<!-- 커스텀 로그인 페이지 지정 -->
-		<security:form-login login-page="/customLogin" authentication-success-handler-ref="customLoginSuccess"/>
+		<security:form-login login-page="/customLogin"
+			authentication-success-handler-ref="customLoginSuccess" />
 
 		<!-- 에러 페이지 지정 -->
 		<!-- <security:access-denied-handler error-page="/accessError"/> -->
+
+		<security:logout logout-url="/customLogout"
+			invalidate-session="true" />
+
 
 		<!-- AccessDeniedHandler 인터페이스 직접 구현 -->
 		<security:access-denied-handler
@@ -39,19 +51,24 @@
 
 	</security:http>
 
+	<!-- <security:authentication-manager> member라는 계정 정보를 가진 사용자가 로그인을 할 수 
+		있도록 설정 <security:authentication-provider> <security:user-service> 패스워드 인코딩 
+		처리 없이 쓰려면 패스워드 앞에 {noop} 추가 <security:user name="member" password="{noop}member" 
+		authorities="ROLE_MEMBER" /> <security:user name="admin" password="{noop}admin" 
+		authorities="ROLE_MEMBER, ROLE_ADMIN" /> </security:user-service> </security:authentication-provider> 
+		</security:authentication-manager> -->
+
 	<security:authentication-manager>
-
-		<!-- member라는 계정 정보를 가진 사용자가 로그인을 할 수 있도록 설정 -->
 		<security:authentication-provider>
-			<security:user-service>
-				<!-- 패스워드 인코딩 처리 없이 쓰려면 패스워드 앞에 {noop} 추가 -->
-				<security:user name="member" password="{noop}member"
-					authorities="ROLE_MEMBER" />
-				<security:user name="admin" password="{noop}admin"
-					authorities="ROLE_MEMBER, ROLE_ADMIN" />
-			</security:user-service>
+			<security:jdbc-user-service
+				data-source-ref="dataSource" />
+			
+			<!-- <security:password-encoder
+				ref="customPasswordEncoder" /> -->
+				
+			<security:password-encoder ref="bcryptPasswordEncoder"/> 
+				
 		</security:authentication-provider>
-
 	</security:authentication-manager>
 
 </beans>

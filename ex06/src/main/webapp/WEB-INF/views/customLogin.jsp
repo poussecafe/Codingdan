@@ -19,7 +19,7 @@
 <input type='text' name='username' value='admin' />
 </div>
 <div>
-<input type='password' name='password' vlaue='admin' />
+<input type='password' name='password' value='admin' />
 </div>
 <div>
 <input type='submit'>
