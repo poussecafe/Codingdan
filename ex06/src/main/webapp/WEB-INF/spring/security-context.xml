@@ -13,15 +13,18 @@
 		class="org.zerock.security.CustomAccessDeniedHandler"></bean>
 
 	<!-- 커스텀 로그인 페이지 핸들러 빈으로 등록(스프링 시큐리티의 기본 구조 사용) -->
-	 <bean id="customLoginSuccess"
-		class="org.zerock.security.CustomLoginSuccessHandler"></bean> 
+	<bean id="customLoginSuccess"
+		class="org.zerock.security.CustomLoginSuccessHandler"></bean>
 
 	<!-- 커스텀 패스워드 인코더를 빈으로 등록 -->
-	<bean id="customPasswordEncoder"
-		class="org.zerock.security.CustomNoOpPasswordEncoder"></bean>
+	<!-- <bean id="customPasswordEncoder" class="org.zerock.security.CustomNoOpPasswordEncoder"></bean> -->
 
-		<!-- 기존 테이블을 사용하여 스프링 시큐리티 패스워드 인코딩 -->
-<bean id="bcryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
+	<!-- 기존 테이블을 사용하여 스프링 시큐리티 패스워드 인코딩(패스워드 인코더는 하나만 존재해야 함, 안 그러면 오류남) -->
+	<bean id="bcryptPasswordEncoder"
+		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
+
+	<bean id="customUserDetailsService"
+		class="org.zerock.security.CustomUserDetailsService"></bean>
 
 	<security:http auto-config="true" use-expressions="true">
 
@@ -49,6 +52,10 @@
 		<security:access-denied-handler
 			ref="customAccessDenied" />
 
+		<!-- 자동 로그인 -->
+		<security:remember-me
+			data-source-ref="dataSource" token-validity-seconds="604800" />
+
 	</security:http>
 
 	<!-- <security:authentication-manager> member라는 계정 정보를 가진 사용자가 로그인을 할 수 
@@ -59,15 +66,22 @@
 		</security:authentication-manager> -->
 
 	<security:authentication-manager>
-		<security:authentication-provider>
-			<security:jdbc-user-service
-				data-source-ref="dataSource" />
-			
-			<!-- <security:password-encoder
-				ref="customPasswordEncoder" /> -->
-				
-			<security:password-encoder ref="bcryptPasswordEncoder"/> 
-				
+		<security:authentication-provider
+			user-service-ref="customUserDetailsService">
+
+			<!-- 지정된 방식 이용 -->
+			<!-- <security:jdbc-user-service data-source-ref="dataSource" /> -->
+
+			<!-- 기존 테이블 이용 -->
+			<!-- <security:jdbc-user-service data-source-ref="dataSource" users-by-username-query="select 
+				userid, userpw, enabled from tbl_member where userid=?" authorities-by-username-query="select 
+				userid, auth from tbl_member_auth where userid=?" /> -->
+
+			<!-- <security:password-encoder ref="customPasswordEncoder" /> -->
+
+			<security:password-encoder
+				ref="bcryptPasswordEncoder" />
+
 		</security:authentication-provider>
 	</security:authentication-manager>
 

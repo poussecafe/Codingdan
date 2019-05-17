@@ -14,13 +14,15 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 import lombok.extern.log4j.Log4j;
 
 @Log4j
-public class CustomLoginSuccessHandler implements AuthenticationSuccessHandler{@Override
+public class CustomLoginSuccessHandler implements AuthenticationSuccessHandler{
+	
+	@Override
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
 			Authentication authentication) throws IOException, ServletException {
 	
 	log.warn("Login Success");
 		
-	List<String> roleNames = new ArrayList();
+	List<String> roleNames = new ArrayList<>();
 	
 	authentication.getAuthorities().forEach(authority ->{
 		roleNames.add(authority.getAuthority());
@@ -29,6 +31,7 @@ public class CustomLoginSuccessHandler implements AuthenticationSuccessHandler{@
 	log.warn("ROLE NAMES: "+roleNames);
 	
 	if(roleNames.contains("ROLE_ADMIN")) {
+		log.info("넘어가는지 아닌지 봅시다.");
 		response.sendRedirect("/sample/admin");
 		return;
 	}
